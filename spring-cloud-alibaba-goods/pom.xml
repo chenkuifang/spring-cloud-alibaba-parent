@@ -11,14 +11,14 @@
     <parent>
         <groupId>com.example</groupId>
         <artifactId>spring-cloud-alibaba-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>spring-cloud-alibaba-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 

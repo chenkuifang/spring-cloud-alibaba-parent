@@ -6,16 +6,15 @@ import lombok.RequiredArgsConstructor;
 import java.math.BigDecimal;
 
 /**
- * order
+ * orderInfo
  *
  * @author Quifar
  * @version 1.0
  */
 @Data
 @RequiredArgsConstructor
-public class Order {
+public class OrderInfo {
     private Integer orderId;
-    private Integer count;
-    private BigDecimal totalPrice;
-    private Integer userId;
+    private Integer goodsId;
+    private String goodsName;
 }
