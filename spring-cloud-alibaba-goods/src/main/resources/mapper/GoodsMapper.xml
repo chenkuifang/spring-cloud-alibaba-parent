@@ -8,13 +8,43 @@
         <result property="storage" column="storage" jdbcType="INTEGER"/>
     </resultMap>
 
+    <sql id="columns">
+        id, name, price, storage
+    </sql>
+
+    <select id="get" resultMap="dataMap">
+        select
+        <include refid="columns"/>
+        from tb_goods
+        where id = #{id}
+    </select>
+
     <select id="list" resultMap="dataMap">
-        select id,name,price,storage from tb_goods
+        select
+        <include refid="columns"/>
+        from tb_goods
     </select>
 
     <insert id="create" parameterType="com.example.common.model.Goods">
-      insert into tb_goods(name,price,storage)
-      values (#{name},#{price},#{storage})
+      insert into tb_goods(id,name, price, storage)
+      values
+      (
+         #{id},#{name}, #{price}, #{storage}
+      )
     </insert>
+
+    <update id="update" parameterType="com.example.common.model.Goods">
+      update tb_goods set
+      <if test="name != null">
+        name = #{name},
+      </if>
+      <if test="price != null">
+        price = #{price},
+      </if>
+      <if test="storage != null">
+        storage = #{storage}
+      </if>
+      where id = #{id}
+    </update>
 
 </mapper>

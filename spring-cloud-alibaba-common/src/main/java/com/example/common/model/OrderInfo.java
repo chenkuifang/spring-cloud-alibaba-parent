@@ -1,9 +1,6 @@
 package com.example.common.model;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
-
-import java.math.BigDecimal;
 
 /**
  * orderInfo
@@ -12,9 +9,19 @@ import java.math.BigDecimal;
  * @version 1.0
  */
 @Data
-@RequiredArgsConstructor
 public class OrderInfo {
+    public OrderInfo() {
+    }
+
     private Integer orderId;
     private Integer goodsId;
     private String goodsName;
+    private Integer orderCount;
+
+    public OrderInfo(Integer orderId, Integer goodsId, String goodsName, Integer orderCount) {
+        this.orderId = orderId;
+        this.goodsId = goodsId;
+        this.goodsName = goodsName;
+        this.orderCount = orderCount;
+    }
 }

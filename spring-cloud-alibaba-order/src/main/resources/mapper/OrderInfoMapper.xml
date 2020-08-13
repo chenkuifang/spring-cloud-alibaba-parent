@@ -5,18 +5,15 @@
         <id property="orderId" column="order_id" jdbcType="INTEGER"/>
         <result property="goodsId" column="goods_id" jdbcType="INTEGER"/>
         <result property="goodsName" column="goods_name" jdbcType="VARCHAR"/>
+        <result property="orderCount" column="order_count" jdbcType="INTEGER"/>
     </resultMap>
 
-    <select id="list" resultMap="dataMap">
-        select order_id,goods_id,goods_name from tb_order_info
-    </select>
-
     <insert id="createBatch" parameterType="java.util.List">
-      insert into tb_order_info(order_id,goods_id,goods_name)
-      values (#{orderId},#{goodsId,#{goodsName})
+      insert into tb_order_info(order_id,goods_id,goods_name,order_count)
+      values
         <foreach item="item" collection="list" separator="," index="index">
             (
-                #{item.orderId},#{item.goodsId},#{item.goodsName}
+                #{item.orderId}, #{item.goodsId}, #{item.goodsName},  #{item.orderCount}
             )
         </foreach>
     </insert>

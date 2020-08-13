@@ -11,5 +11,7 @@ public interface OrderService {
 
     List<OrderDTO> list();
 
-    Boolean createOrder(OrderDTO orderDTO);
+    Boolean createOrder1();
+
+    Boolean createOrder2();
 }

@@ -13,8 +13,8 @@
     </select>
 
     <insert id="create" parameterType="com.example.common.model.Order">
-      insert into tb_order(count,total_price,user_id)
-      values (#{count},#{totalPrice,#{userId})
+      insert into tb_order(order_id,count,total_price,user_id)
+      values (#{orderId}, #{count}, #{totalPrice}, #{userId})
     </insert>
 
 </mapper>
